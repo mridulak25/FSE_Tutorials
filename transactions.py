@@ -1,11 +1,9 @@
 from decimal import Decimal, InvalidOperation
 from typing import List, Tuple
 
-
 # Constants
 CURRENCY_SYMBOL = "R"
 # TODO: Remove the TRANSACTION_TYPES constant below - we are not using it in the Transaction class
-
 
 
 class Transaction:
@@ -43,14 +41,13 @@ def calculate_total_expenses(transactions: List[Transaction]) -> Decimal:
         if transaction.amount < 0:
             total += transaction.amount
 
-    
     return total
 
 
 # TODO: Implement this function to sum all transactions with positive amounts
 def calculate_total_income(transactions: List[Transaction]) -> Decimal:
     """Calculates the total income from a list of transactions.
-    
+
     Args:
         transactions: A list of Transaction objects.
 
@@ -63,9 +60,8 @@ def calculate_total_income(transactions: List[Transaction]) -> Decimal:
         if transaction.amount > 0:
             total += transaction.amount
 
-    
     return total
-            
+
 
 # NOTE: This function is already complete - no changes needed here!
 def format_currency(amount: Decimal) -> str:
@@ -83,6 +79,7 @@ def format_currency(amount: Decimal) -> str:
         'R 1234.56'
     """
     return f"{CURRENCY_SYMBOL} {amount:,.2f}"
+
 
 # TODO: Remove the entire add_transaction function below (no longer needed with Transaction class)
 
@@ -111,8 +108,11 @@ def calculate_balance(transactions: List[dict]) -> Decimal:
         Decimal('4000')
     """
     balance = Decimal(0)
-    balance = calculate_total_income(transactions) + calculate_total_expenses(transactions)
+    balance = calculate_total_income(transactions) + calculate_total_expenses(
+        transactions
+    )
     return balance
+
 
 # TODO: Remove the entire get_income_total function below (replaced by calculate_total_income)
 
