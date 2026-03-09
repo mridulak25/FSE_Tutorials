@@ -26,6 +26,7 @@ def test_financial_summary_endpoint(client):
     assert "Entertainment %" in data
     assert "Essential Coverage" in data
     assert "Net Savings" in data
+    
 
 
 def test_financial_charts_endpoint(client):
